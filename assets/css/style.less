@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/* Primary Color Vars */
+@soft-blue: hsl(215, 51%, 70%);
+@cyan: hsl(178, 100%, 50%);
+@cyan-transparent: hsla(178, 100%, 50%, 0.4);
+/* Neutral Color vars */
+@main-bg: hsl(217, 54%, 11%);
+@card-bg: hsl(216, 50%, 16%);
+@line: hsl(215, 32%, 27%);
+@white: hsl(0, 0%, 100%);
+
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+}
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clear {
+    clear: both;
+}
+/* General Styles */
+html {
+    font-size: 62.5%;
+}
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    background-color: @main-bg;
+    margin: 8rem 2.5rem 0 2.5rem;
+    height: 100vh;
+}
+h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: auto;
+}
+p {
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 2.6rem;
+}
+a {
+    color: @white;
+    font-weight: 400;
+    text-decoration: none;
+}
+a:hover {
+    color: @cyan;
+}
+/* Main Styles */
+.card {
+    background-color: @card-bg;
+    padding: 1.8rem;
+    border-radius: 1.5rem;
+    max-width: 35rem;
+}
+.nft {
+    position: relative;
+
+    .nft__image {
+        display: block;
+        border-radius: .8rem;
+        width: 100%;
+    }
+    .nft__overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        opacity: 0;
+        transition: .3s ease;
+        background-color: @cyan-transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nft__overlay:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+    .nft__overlay-icon {
+        color: @white;
+    }
+    .nft__overlay-icon:hover {
+        color: red;
+    }
+}
+.content {
+    border-bottom: 1px solid @line;
+
+    .content__heading a {
+        font-weight: 600;
+    }
+    .content__paragraph {
+        color: @soft-blue;
+    }
+}
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .price__cost,
+    .price__time {
+        font-size: 1.6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .price__cost {
+        color: @cyan;
+        font-weight: 600;
+    }
+    .price__time {
+        color: @soft-blue;
+    }
+}
+.creator {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .creator__avatar {
+        width: 3.3rem;
+        height: 3.3rem;
+        border-radius: 50%;
+        border: 1px solid @white;
+    }
+    .creator__link {
+        color: @soft-blue;
+        font-size: 1.6rem; 
+    }
+}
+.attribution {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    body {
+        margin: 0;
+        align-items: center;
+    }
+    .attribution {
+      background-color: @card-bg;
+      color: @white;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      padding: 1.5rem 0;
+    }
+    .attribution a {
+        color: @cyan;
+    }
+}
