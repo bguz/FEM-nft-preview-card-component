@@ -22,7 +22,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL (WIP): [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: (https://bguz.github.io/FEM-nft-preview-card-component/)
 
 ## My process
 
